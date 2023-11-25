@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Meta Datos-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Conexion con CSS-->
+    <link rel="stylesheet" href="/PYTHON/templates/CSS/Login.css">
+    <link rel="stylesheet" href="/PYTHON/templates/CSS/Navbar.css">
+    <link rel="stylesheet" href="/PYTHON/templates/CSS/Register.css">
+    <!--Enlaces para iconos-->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css'><!--enlace a la plataforma flaticon | https://www.flaticon.es/-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--enlace a la plataforma BOXICONS | https://boxicons.com/usage-->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--enlace a la plataforma BOXICONS | https://boxicons.com/usage-->
+    <!--Conexion con JAVASCRIPT-->
+    <script src="/Login with navbar/JS/Index.js"></script>
+    <!--Conexion con Python-->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!--Seccion de navegacion-->
+    <header>
+        <h2 class="logo">Logo</h2>
+        <input type="checkbox" name="" id="checkbox_togle">
+        <label for="checkbox-togle" class="hamburger">&#9776</label>
+
+        <nav class="navbar">
+            <a href="">Home</a>
+            <a href="/Login with navbar/HTML/About.html">About</a>
+            <a href="">Services</a>
+            <a href="">Contact</a>
+            <button class="navbar-btn-login" id="navbar-btn-login" onclick="OpenWindowLogin()">Login</button>  <!--Abrimos ventana Login-->
+            <button class="navbar-btn-register" id="navbar-btn-register" onclick="OpenWindowRegister()">Register</button>
+        </nav>
+    </header>
+    <!--Seccion de formulario | iniciar sesion -->
+        <div class="container-form" id="WindowNavbarButtonLogin"> <!--contenedor del formulario-->
+            <buttton class="close-icon" onclick="CloseWindowLogin()"><i class="fi fi-rs-cross-small"></i></buttton>
+            <form class="form-signin" action="/login" method="post"> <!--seccion del formulario-->
+                <h1>Iniciar Sesión </h1>
+                <div class="input-box">  <!--Campo donde se introduce el usuario-->
+                    <input type="text" placeholder="Ingrese su Usuario" required id="Username">
+                    <i class="fi fi-sr-user"></i>
+                </div>
+                <div class="input-box"><!--Campo donde se introduce la contraseña-->
+                    <input type="password"placeholder="Ingrese su Contraseña" required id="Password">
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="recordar-usuario"> <!--Campo donde se recuerda al usuario para una proxima sesion-->
+                    <label>
+                        <input type="checkbox">Remember me
+                    </label>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit" class="boton" onclick="login()">Login</button>
+
+                <div class="registrar-usuario">
+                    <p>
+                        ¿Es tu primera vez?
+                        <a href="/Login/HTML/Register.html" class="register-link">Registrate</a> 
+                    </p>
+                    
+                </div>
+            </form>
+        </div>
+        <!--Seccion de formulario | registarse -->
+
+        <div class="container-form-register" id="WindowNavbarButtonRegister">
+            <div class="information">
+                <div class="information-relative">
+                    <h1>Bienvenido</h1>
+                    <p> <b>¡A la Empresa Molisa Ingenieros!</b> <br> <br>Para acceder a nuestra plataforma, por favor regístrate con tus datos. Si ya tienes una cuenta, haz click en el botón de abajo e ingresa tus credenciales.</p>
+                    <button class="navbar-btn-login" id="navbar-btn-login" onclick="OpenWindowLogin()">Iniciar Sesión</button>  <!--Abrimos ventana Login-->
+                </div>
+            </div>
+            <hr />
+            <div class="information-forms">
+                <buttton class="close-icon"><a href="javascript:CloseWindowRegister()"><i class="fi fi-rs-cross-small"></i></a></buttton>
+                <div class="information-forms-segmente">
+                    <h2>Crear una cuenta</h2>
+                    <div class="icons">
+                        <i class='bx bxl-google'></i>
+                        <i class='bx bxl-facebook' ></i>
+                    </div>
+                    <p>O usa tu e-mail para registrarte</p>
+                    <form class="input-box-register">
+                        <label>
+                            <i class="fi fi-sr-user"></i>
+                            <input type="text" placeholder="Ingrese su Nombre Completo" required id="Username">
+                        </label>
+    
+                        <label>
+                            <i class='bx bx-envelope'></i>
+                            <input type="email" placeholder="Ingrese su Email" required id="Email">
+                        </label>
+    
+                        <label>
+                            <i class='bx bxs-lock-alt'></i>
+                            <input type="password" placeholder="Ingrese su Contraseña" required id="Password">
+                        </label>
+                        <button class="boton">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <h1>{{ mensaje }}</h1>
+</body>
+</html>

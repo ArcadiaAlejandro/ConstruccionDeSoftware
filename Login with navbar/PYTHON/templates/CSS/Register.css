@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.close-icon { /*icono de cerrar pantalla*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 55px;
+    font-size: 2em;
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#WindowNavbarButtonRegister{
+    display: none;
+}
+
+.container-form-register {
+    width: 1000px; 
+    max-width: 1000px; 
+    background: transparent;
+    border: 2px solid rgba(255, 25 5, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0 , 0, .3);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    margin: 10px;
+    transition: all 1s ease;
+    display: flex;
+}
+
+.information,
+.information-forms {
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.information-relative,
+.information-forms-segmente {
+    width: 100%;
+    padding: 0 30px;
+    position: relative;
+    height: 400px;
+}
+
+.information-relative h1,
+.information-forms-segmente h2 {
+    font-size: 2.5rem;
+    user-select: none;
+}
+
+.information-relative p {
+    margin: 15px 0;
+    color: #fff;
+    user-select: none;
+}
+
+.information-relative a{
+    color: black;
+    text-decoration: none;
+}
+
+.information-relative button {
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.icons i {
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 10px;
+    color: #F0F0F0;
+    box-shadow: 0 2px 5px rgba(0, 0 , 0, .1);
+    transition: background-color .3s ease;
+    border: solid thin #F0F0F0;
+}
+
+.information-forms-segmente .icons {
+    margin: 15px 0;
+}
+
+.information-relative button {
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.information-relative button:hover,
+.icons i:hover {
+    background-color: #F0F0F0;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+.input-box-register {
+    width: 100%;
+    margin: 30px 0 0 0;
+}
+
+.input-box-register label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 0 10px;
+    background: transparent;
+}
+
+.input-box-register input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 10px;
+}
+
+.input-box-register label input::placeholder {
+    color: #fff;
+}
+
+.input-box-register i {
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-top: 3px;
+    font-size: 20px;
+}
+
+.input-box-register .boton {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0 , 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.information-relative button:hover {
+    background-color: #F0F0F0;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0 , 0, .1);
+}
+
+/* Media Query for responsiveness */
+@media (min-width: 1000px) {
+    body {
+        background-attachment: scroll; /* Cambiar a scroll en pantallas pequeñas */
+    }
+
+    .container-form {
+        padding: 20px; /* Ajustar el relleno para pantallas más pequeñas */
+    }
+
+    .information,
+    .information-forms {
+        flex-direction: column; /* Apilar elementos en columna */
+    }
+
+    .input-box-register i {
+        transform: translatex(-50%);
+    }
+}

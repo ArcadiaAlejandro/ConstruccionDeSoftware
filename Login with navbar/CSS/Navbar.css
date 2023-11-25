@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    transition: .2s ease;
+    overflow: hidden;
+}
+
+
+/*Seccion de navegacion*/
+
+header{
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 2em;
+    color: white;
+    user-select: none;
+}
+
+/*Seccion de la navegacion hamburguesa*/
+
+#checkbox_togle{
+    display: none;
+}
+
+.hamburger{
+    display: none;
+    font-size: 24px;
+}
+
+/*navbar menu*/
+
+.navbar a{
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navbar .navbar-btn-login, .navbar-btn-register {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navbar-btn-login:hover, .navbar-btn-register:hover {
+    background: #fff;
+    color: black;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+@media (max-width: 876px){
+    header{
+        padding: 20px 40px;
+    }
+
+    /*seccion de navegacion*/
+    .navbar{
+        display: none;     
+    }
+
+    .navbar a{
+        margin-left: 20px;
+        font-size: .9em;
+    }
+
+    .navbar a:hover{
+        display: inline-block;
+        background: transparent;
+        transition: 3.s ease;
+    }
+
+    .navbar-btn-login, .navbar-btn-register{
+        margin-left: 20px;
+        font-size: .9em;
+    }
+
+    /*navegacion checkbox*/
+    #checkbox_togle:checked ~ .navbar{
+        display: inline-block;
+        max-width: 600px;
+        padding: 10px;
+        margin-right: 5px;
+        position: absolute;
+        right: 10px;
+        top: 70px;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, .5);
+        border-radius: 20px;
+        backdrop-filter: blur(20px);
+        text-align: center;
+    }
+
+    /*seccion de navegacion*/
+    .hamburger{
+        display: block;
+        color: #fff;
+        font-size: 2em;
+        
+    }
+}
